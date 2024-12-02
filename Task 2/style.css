@@ -1,0 +1,368 @@
+/* Importing Google Fonts for styling */
+@import url("https://fonts.googleapis.com/css2?family=Protest+Guerrilla&family=Teko:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Protest+Guerrilla&family=Teko:wght@300..700&display=swap");
+
+/* body styling */
+/* Styling the entire page */
+body {
+  background-color: #070410; /* Dark background for contrast */
+  margin: auto;
+  font-family: "Lato", sans-serif; /* Setting the font family */
+}
+/* HEADER STYLING */
+header {
+  background-color: #231651; /* Dark purple background for header */
+  width: 100%;
+  box-sizing: border-box; /* Include padding/border in width/height */
+  padding: 16px;
+  display: flex; /* Flexbox for alignment */
+  justify-content: space-between; /* Space between logo, menu, and button */
+  align-items: center;
+  color: #FFFFFF; /* White text color */
+  font-family: "Teko", sans-serif; /* Header-specific font */
+  box-shadow: 0px 10px 5px black; /* Adding shadow for depth */
+}
+
+/* Logo styling */
+header .logo {
+  padding: 0px;
+  font-size: 3em; /* Large logo text */
+}
+ /* Navigation menu */
+header ul {
+  display: flex; /* Flex layout for horizontal menu */
+  gap: 48px; /* Spacing between menu items */
+  padding: 0%;
+  font-size: 1.2em; /* Slightly larger menu font */
+}
+header li {
+  list-style-type: none; /* Remove bullet points from menu */
+}
+
+/* Links inside navigation */
+header a {
+  text-decoration: none; /* Remove underline */
+  color: rgb(235, 235, 235); /* Off-white text color */
+  padding: 0%;
+}
+
+/* Search button styling */
+header button {
+  font-size: 2em;
+  font-family: "Teko", sans-serif;
+  padding: 0px;
+  border: 0px;  /* No border */
+  border-radius: 10px; /* Rounded corners */
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+header button a {
+  color: #140e25; /* Dark text inside button */
+  background-color: #EEF36A; /* Yellow button color */
+  box-sizing: border-box;
+  padding: 10px; /* Inner padding */
+  text-decoration: none; /* Remove underline */
+  border-radius: 21px; /* Fully rounded */
+}
+/* MAIN SECTION STYLING */
+main {
+  margin: auto;
+  max-width: 900px; /* Center content with max width */
+  display: grid; /* Use grid layout for movies */
+  grid-template-columns: repeat auto-fit, 1fr; /* Responsive columns */
+  grid-template-areas: "movie1 movie1" "movie2 movie3" "movie4 movie4" "movie5 movie5" "movie6 movie6";
+  margin: 48px auto; /* Vertical margin */
+  gap: 16px; /* Space between grid items */
+}
+
+/* FILM BOX STYLING */
+/* Base style for all film boxes */
+.film-box  {
+  background-color: #231651; /* Background matches header */
+  color: #ffffff; /* White text */
+  font-size: 1.5em; /* Large text for readability */
+  margin: 16px; /* Outer spacing */
+  box-shadow: 10px 10px 10px #4DCCBD; /* Green shadow */
+  display: grid; /* Grid layout inside each film box */
+  border-radius: 20px; /* Rounded corners */
+}
+
+/* Movie poster inside film box */
+.film-box  .movie-poster {
+  grid-area: poster; /* Assign grid area */
+  display: grid;
+}
+
+/* Description inside film box */
+.film-box  .film-desc {
+  grid-area: desc; /* Assign grid area */
+  box-sizing: border-box;
+  padding: 16px;
+  display: flex; /* Flex layout for text and button */
+  gap: 16px; /* Space between text and button */
+}
+.film-box .film-desc p {
+  padding: 0%;
+  margin: 0%;
+}
+/* Button styling inside film boxes */
+.film-box  button {
+  grid-area: button; /* Assign grid area */
+  background-color: #4DCCBD; /* Green button color */
+}
+.film-box img {
+  height: 400px;
+  width: 400px;
+  -o-object-fit: fill;
+     object-fit: fill;
+border-top-right-radius: 20px;
+border-top-left-radius: 20px;
+}
+/* FILM BOX SPECIFIC STYLING */
+/* Film Box 1 (featured movie) */
+.film-box-1 {
+  grid-area: movie1; /* Assigned in grid layout */
+  grid-template-rows: 1fr 0.6fr; /* Flexible row heights */
+  grid-template-areas: "poster poster " "desc button";
+}
+.film-box-1  img {
+  width: 100%;
+  height: 250px;
+  -o-object-position: 0% 12%;
+     object-position: 0% 12%;
+}
+.film-box-1  p {
+  flex: 1;
+}
+.film-box-1 button {
+  font-size: 2em;
+  font-family: "Teko", sans-serif;
+  padding: 0px;
+  border: 0px;
+  border-radius: 10px;
+  height: -moz-fit-content;
+  height: fit-content;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 16px;
+  flex: 0.6;
+}
+.film-box-1  button a {
+  color: #070410;
+  box-sizing: border-box;
+  padding: 16px;
+  text-decoration: none;
+}
+.film-box-1  button a {
+  box-sizing: border-box;
+  padding: 0px 70px;
+  display: flex;
+  line-height: 50px;
+  justify-content: center;
+}
+/* Film Box 2 and 3 */
+.film-box-2 , .film-box-3 {
+  grid-area: movie2;
+  grid-template-rows: 1.25fr 1fr; /* Adjust rows for proportions */
+  grid-template-areas: "poster" "desc";
+}
+.film-box-2 .film-desc, 
+.film-box-3 .film-desc {
+  flex-direction: column;
+  justify-content: space-between;
+}
+.film-box-2 img, 
+.film-box-3 img {
+  width: 100%;
+  height: 100%;
+}
+.film-box-2 button, 
+.film-box-3 button {
+  font-size: 2em;
+  font-family: "Teko", sans-serif;
+  padding: 0px;
+  border: 0px;
+  border-radius: 10px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.film-box-2 button a, 
+.film-box-3 button a {
+  color: #070410;
+  box-sizing: border-box;
+  padding: 16px;
+  text-decoration: none;
+}
+.film-box-3 {
+  grid-area: movie3;
+}
+
+/* Film Box 4, 5, 6 */
+.film-box-4, 
+.film-box-6, 
+.film-box-5 {
+  grid-area: movie4;
+  grid-template-areas: "poster desc";
+}
+.film-box-4 .film-desc, 
+.film-box-6 .film-desc, 
+.film-box-5 .film-desc {
+  flex-direction: column;
+  justify-content: space-between;
+}
+.film-box-4 button, 
+.film-box-6 button, 
+.film-box-5 button {
+  font-size: 2em;
+  font-family: "Teko", sans-serif;
+  padding: 0px;
+  border: 0px;
+  border-radius: 10px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.film-box-4 button a, 
+.film-box-6 button a, 
+.film-box-5 button a {
+  color: #070410;
+  box-sizing: border-box;
+  padding: 16px;
+  text-decoration: none;
+}
+.film-box-5 {
+  grid-area: movie5;
+}
+.film-box-6 {
+  grid-area: movie6;
+}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+/* Desktop View (1023px and below) */
+@media screen and (max-width: 1023px) {
+  header ul {
+    gap: 32px; /* Reduce spacing between menu items */
+  }
+  main {
+    margin: 32px auto;
+    grid-template-areas: "movie1 movie2" "movie3 movie4" "movie5 movie6";
+  }
+  .film-box{
+    grid-auto-columns: minmax(100px, 1fr);
+  }
+  .film-box img {
+    height: 100px;
+    width: 100px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .film-box .film-desc {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .film-box-1  {
+    grid-template-areas: "poster" "desc";
+    grid-template-rows: 0.5fr 1fr;
+  }
+  .film-box-1  img {
+    width: 100%;
+    height: 100%;
+    -o-object-position: 0%;
+       object-position: 0%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .film-box-1  p, 
+  .film-box-1 button {
+    flex: 0;
+  }
+  .film-box-1  button a {
+    padding: 0px 101px;
+  }
+  .film-box-2, 
+  .film-box-3 {
+    grid-template-rows: 0.5fr 1fr;
+  }
+  .film-box-2 img, 
+  .film-box-3 img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .film-box-2 button, 
+  .film-box-3 button {
+    box-sizing: border-box;
+    padding: 16px;
+  }
+  .film-box-2 button a, 
+  .film-box-3 button a {
+    box-sizing: border-box;
+    padding: 0px 101px;
+    display: flex;
+    line-height: 50px;
+    justify-content: center;
+  }
+  .film-box-4, 
+  .film-box-5, 
+  .film-box-6{
+    grid-template-areas: "poster" "desc";
+    grid-template-rows: 0.5fr 1fr;
+  }
+  .film-box-4 img, 
+  .film-box-5 img, 
+  .film-box-6 img {
+    width: 100%;
+    height: 100%;
+    -o-object-position: 0%;
+       object-position: 0%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .film-box-4 button, 
+  .film-box-5 button, 
+  .film-box-6 button {
+    box-sizing: border-box;
+    padding: 16px;
+  }
+  .film-box-4 button a, 
+  .film-box-5 button a, 
+  .film-box-6 button a {
+    box-sizing: border-box;
+    padding: 0px 101px;
+    display: flex;
+    line-height: 50px;
+    justify-content: center;
+  }
+}
+
+/* Tablet View (719px and below) */
+@media screen and (max-width: 719px) {
+  header {
+    margin-bottom: 16px;
+    box-shadow: 0px 0px 0px; /* Remove header shadow */
+  }
+  header .logo {
+    font-size: 2em;
+  }
+  header nav {
+    display: none;  /* Hide navigation menu */
+  }
+  main {
+    max-width: 100%;
+    margin: 0px;
+    grid-template-areas: "movie1" "movie2" "movie3" "movie4" "movie5" "movie6";
+  }
+  .film-box {
+    margin: 0px;
+    margin-bottom: 16px;
+    box-shadow: 0px 0px 0px; /* Remove film box shadow */
+    grid-template-rows: auto;
+  }
+  .film-box .film-desc {
+    justify-content: unset;
+  }
+  .film-box button a {
+    padding: 0px;
+  }
+}
